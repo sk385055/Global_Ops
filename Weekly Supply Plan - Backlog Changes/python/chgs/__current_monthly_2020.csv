@@ -1,0 +1,26 @@
+﻿MetricType,CreationDate,MetricFrom,MetricTo,BaseFile,CompareFile
+Monthly,2020_07_13,Wk27,Wk28,../../wsps_final\2020_07_06 Wk27 Weekly Supply Plan v2upd2.csv,../../wsps_final\2020_07_13 Wk28 Weekly Supply Plan v3.csv
+Monthly,2020_07_20,Wk27,Wk29,../../wsps_final\2020_07_06 Wk27 Weekly Supply Plan v2upd2.csv,../../wsps_final\2020_07_20 Wk29 Weekly Supply Plan v2.csv
+Monthly,2020_07_27,Wk27,Wk30,../../wsps_final\2020_07_06 Wk27 Weekly Supply Plan v2upd2.csv,../../wsps_final\2020_07_27 Wk30 Weekly Supply Plan v2.csv
+Monthly,2020_08_03,Wk27,Wk31,../../wsps_final\2020_07_06 Wk27 Weekly Supply Plan v2upd2.csv,../../wsps_final\2020_08_03 Wk31 Weekly Supply Plan v2.csv
+Monthly,2020_08_10,Wk31,Wk32,../../wsps_final\2020_08_03 Wk31 Weekly Supply Plan v2.csv,../../wsps_final\2020_08_10 Wk32 Weekly Supply Plan v2 rev1.csv
+Monthly,2020_08_17,Wk31,Wk33,../../wsps_final\2020_08_03 Wk31 Weekly Supply Plan v2.csv,../../wsps_final\2020_08_17 Wk33 Weekly Supply Plan v2rev4.csv
+Monthly,2020_08_24,Wk31,Wk34,../../wsps_final\2020_08_03 Wk31 Weekly Supply Plan v2.csv,../../wsps_final\2020_08_24 Wk34 Weekly Supply Plan v2.csv
+Monthly,2020_09_01,Wk31,Wk35,../../wsps_final\2020_08_03 Wk31 Weekly Supply Plan v2.csv,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv
+Monthly,2020_09_07,Wk35,Wk36,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_09_07 Wk36 Weekly Supply Plan v2.csv
+Monthly,2020_09_14,Wk35,Wk37,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_09_14 Wk37 Weekly Supply Plan vFinal.csv
+Monthly,2020_09_21,Wk35,Wk38,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_09_21 Wk38 Weekly Supply Plan v2c.csv
+Monthly,2020_10_01,Wk35,Wk39,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_10_01 Wk39 Weekly Supply Plan v1.csv
+Monthly,2020_10_05,Wk35,Wk40,../../wsps_final\2020_09_01 Wk35 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_10_05 Wk40 Weekly Supply Plan vFinal.csv
+Monthly,2020_10_19,Wk41,Wk42,../../wsps_final\2020_10_12 Wk41 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_10_19 Wk42 Weekly Supply Plan v2a.csv
+Monthly,2020_10_26,Wk41,Wk43,../../wsps_final\2020_10_12 Wk41 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_10_26 Wk43 Weekly Supply Plan v3.csv
+Monthly,2020_11_02,Wk41,Wk44,../../wsps_final\2020_10_12 Wk41 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_11_02 Wk44 Weekly Supply Plan vFinal.csv
+Monthly,2020_11_09,Wk44,Wk45,../../wsps_final\2020_11_02 Wk44 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_11_09 Wk45 Weekly Supply Plan vFinal.csv
+Monthly,2020_11_16,Wk44,Wk46,../../wsps_final\2020_11_02 Wk44 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_11_16 Wk46 Weekly Supply Plan vFinal.csv
+Monthly,2020_11_23,Wk44,Wk47,../../wsps_final\2020_11_02 Wk44 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_11_23 Wk47 Weekly Supply Plan vFinal.csv
+Monthly,2020_12_01,Wk44,Wk48,../../wsps_final\2020_11_02 Wk44 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv
+Monthly,2020_12_07,Wk48,Wk49,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_12_07 Wk49 Weekly Supply Plan vFinal.csv
+Monthly,2020_12_14,Wk48,Wk50,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_12_14 Wk50 Weekly Supply Plan vFinal.csv
+Monthly,2020_12_21,Wk48,Wk51,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_12_21 Wk51 Weekly Supply Plan v2.csv
+Monthly,2020_12_28,Wk48,Wk52,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv,../../wsps_final\2020_12_28 Wk52 Weekly Supply Plan vFinal.csv
+Monthly,2021_01_04,Wk48,Wk01,../../wsps_final\2020_12_01 Wk48 Weekly Supply Plan vFinal.csv,../../wsps_final\2021_01_04 Wk01 Weekly Supply Plan vFinal.csv

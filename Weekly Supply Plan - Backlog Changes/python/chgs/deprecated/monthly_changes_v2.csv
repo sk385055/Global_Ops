@@ -1,0 +1,4 @@
+﻿MetricType,CreationDate,MetricFrom,MetricTo,BaseFile,CompareFile
+Monthly,2021_03_29,Wk09,Wk13,../../wsps_final\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final\2021_03_29 Wk13 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_05,Wk09,Wk14,../../wsps_final\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_12,Wk14,Wk15,../../wsps_final\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv,../../wsps_final\2021_04_12 Wk15 Weekly Supply Plan v2.csv

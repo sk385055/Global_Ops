@@ -1,0 +1,27 @@
+﻿MetricType,CreationDate,MetricFrom,MetricTo,BaseFile,CompareFile
+Weekly,2020_01_13,Wk1,Wk2,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_06 Wk01 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_13 Wk02 Weekly Supply Plan vFinal.csv
+Weekly,2020_01_20,Wk2,Wk3,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_13 Wk02 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_20 Wk03 Weekly Supply Plan vFinal.csv
+Weekly,2020_01_27,Wk3,Wk4,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_20 Wk03 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_27 Wk04 Weekly Supply Plan vFinal.csv
+Weekly,2020_02_03,Wk4,Wk5,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_01_27 Wk04 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_03 Wk05 Weekly Supply Plan vFinal.csv
+Weekly,2020_02_10,Wk5,Wk6,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_03 Wk05 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_10 Wk06 Weekly Supply Plan vFinal.csv
+Weekly,2020_02_17,Wk6,Wk7,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_10 Wk06 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_17 Wk07 Weekly Supply Plan vFinal.csv
+Weekly,2020_02_24,Wk7,Wk8,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_17 Wk07 Weekly Supply Plan vFinal.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_24 Wk08 Weekly Supply Plan.csv
+Weekly,2020_03_02,Wk8,Wk9,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_02_24 Wk08 Weekly Supply Plan.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_02 Wk09 Weekly Supply Plan v6.csv
+Weekly,2020_03_09,Wk9,Wk10,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_02 Wk09 Weekly Supply Plan v6.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_09 Wk10 Weekly Supply Plan v2.csv
+Weekly,2020_03_16,Wk10,Wk11,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_09 Wk10 Weekly Supply Plan v2.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_16 Wk11 Weekly Supply Plan v5.csv
+Weekly,2020_03_23,Wk11,Wk12,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_16 Wk11 Weekly Supply Plan v5.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_23 Wk12 Weekly Supply Plan v4.csv
+Weekly,2020_03_30,Wk12,Wk13,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_23 Wk12 Weekly Supply Plan v4.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_30 Wk13 Weekly Supply Plan v5.csv
+Weekly,2020_04_06,Wk13,Wk14,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_03_30 Wk13 Weekly Supply Plan v5.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_06 Wk14 Weekly Supply Plan v7.csv
+Weekly,2020_04_13,Wk14,Wk15,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_06 Wk14 Weekly Supply Plan v7.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_13 Wk15 Weekly Supply Plan v8a.csv
+Weekly,2020_04_20,Wk15,Wk16,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_13 Wk15 Weekly Supply Plan v8a.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_20 Wk16 Weekly Supply Plan v8.csv
+Weekly,2020_04_27,Wk16,Wk17,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_20 Wk16 Weekly Supply Plan v8.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_27 Wk17 Weekly Supply Plan v5.csv
+Weekly,2020_05_04,Wk17,Wk18,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_04_27 Wk17 Weekly Supply Plan v5.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_04 Wk18 Weekly Supply Plan v7.csv
+Weekly,2020_05_11,Wk18,Wk19,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_04 Wk18 Weekly Supply Plan v7.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_11 Wk19 Weekly Supply Plan v4.csv
+Weekly,2020_05_18,Wk19,Wk20,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_11 Wk19 Weekly Supply Plan v4.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_18 Wk20 Weekly Supply Plan v8.csv
+Weekly,2020_05_25,Wk20,Wk21,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_18 Wk20 Weekly Supply Plan v8.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_25 Wk21 Weekly Supply Plan v2.csv
+Weekly,2020_06_01,Wk21,Wk22,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_05_25 Wk21 Weekly Supply Plan v2.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_01 Wk22 Weekly Supply Plan v4.csv
+Weekly,2020_06_08,Wk22,Wk23,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_01 Wk22 Weekly Supply Plan v4.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_08 Wk23 Weekly Supply Plan v2.csv
+Weekly,2020_06_15,Wk23,Wk24,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_08 Wk23 Weekly Supply Plan v2.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_15 Wk24 Weekly Supply Plan v3a.csv
+Weekly,2020_06_22,Wk24,Wk25,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_15 Wk24 Weekly Supply Plan v3a.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_22 Wk25 Weekly Supply Plan v5.csv
+Weekly,2020_06_29,Wk25,Wk26,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_22 Wk25 Weekly Supply Plan v5.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_29 Wk26 Weekly Supply Plan v2.csv
+Weekly,2020_07_06,Wk26,Wk27,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_06_29 Wk26 Weekly Supply Plan v2.csv,C:/NCR/wsp_compare_log/wsps_historic_out2/2020_07_06 Wk27 Weekly Supply Plan v2upd2.csv

@@ -1,0 +1,27 @@
+﻿MetricType,CreationDate,MetricFrom,MetricTo,BaseFile,CompareFile
+Monthly,2021_01_11,Wk01,Wk02,../../wsps_final2\2021_01_04 Wk01 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_01_11 Wk02 Weekly Supply Plan v3.csv
+Monthly,2021_01_18,Wk01,Wk03,../../wsps_final2\2021_01_04 Wk01 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_01_18 Wk03 Weekly Supply Plan vFinal.csv
+Monthly,2021_01_25,Wk01,Wk04,../../wsps_final2\2021_01_04 Wk01 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_01_25 Wk04 Weekly Supply Plan vFinal_che_cost_corr.csv
+Monthly,2021_02_01,Wk01,Wk05,../../wsps_final2\2021_01_04 Wk01 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_02_01 Wk05 Weekly Supply Plan vFinal_che_cost_corr.csv
+Monthly,2021_02_08,Wk05,Wk06,../../wsps_final2\2021_02_01 Wk05 Weekly Supply Plan vFinal_che_cost_corr.csv,../../wsps_final2\2021_02_08 Wk06 Weekly Supply Plan vFinal.csv
+Monthly,2021_02_15,Wk05,Wk07,../../wsps_final2\2021_02_01 Wk05 Weekly Supply Plan vFinal_che_cost_corr.csv,../../wsps_final2\2021_02_15 Wk07 Weekly Supply Plan v3.csv
+Monthly,2021_02_22,Wk05,Wk08,../../wsps_final2\2021_02_01 Wk05 Weekly Supply Plan vFinal_che_cost_corr.csv,../../wsps_final2\2021_02_22 Wk08 Weekly Supply Plan vFinal.csv
+Monthly,2021_03_01,Wk05,Wk09,../../wsps_final2\2021_02_01 Wk05 Weekly Supply Plan vFinal_che_cost_corr.csv,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv
+Monthly,2021_03_08,Wk09,Wk10,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final2\2021_03_08 Wk10 Weekly Supply Plan v2.csv
+Monthly,2021_03_15,Wk09,Wk11,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final2\2021_03_15 Wk11 Weekly Supply Plan v2.csv
+Monthly,2021_03_22,Wk09,Wk12,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final2\2021_03_22 Wk12 Weekly Supply Plan vFinal.csv
+Monthly,2021_03_29,Wk09,Wk13,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final2\2021_03_29 Wk13 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_05,Wk09,Wk14,../../wsps_final2\2021_03_01 Wk09 Weekly Supply Plan v2.csv,../../wsps_final2\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_12,Wk14,Wk15,../../wsps_final2\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_04_12 Wk15 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_19,Wk14,Wk16,../../wsps_final2\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_04_19 Wk16 Weekly Supply Plan vFinal.csv
+Monthly,2021_04_26,Wk14,Wk17,../../wsps_final2\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_04_26 Wk17 Weekly Supply Plan vFinal.csv
+Monthly,2021_05_02,Wk14,Wk18,../../wsps_final2\2021_04_05 Wk14 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_05_03 Wk18 Weekly Supply Plan vFinal.csv
+Monthly,2021_05_10,Wk18,Wk19,../../wsps_final2\2021_05_03 Wk18 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_05_10 Wk19 Weekly Supply Plan vFinal.csv
+Monthly,2021_05_17,Wk18,Wk20,../../wsps_final2\2021_05_03 Wk18 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_05_17 Wk20 Weekly Supply Plan vFinal.csv
+Monthly,2021_05_24,Wk18,Wk21,../../wsps_final2\2021_05_03 Wk18 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_05_24 Wk21 Weekly Supply Plan vFinal.csv
+Monthly,2021_05_31,Wk18,Wk22,../../wsps_final2\2021_05_03 Wk18 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv
+Monthly,2021_06_07,Wk22,Wk23,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_06_07 Wk23 Weekly Supply Plan vFinal.csv
+Monthly,2021_06_14,Wk22,Wk24,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_06_14 Wk24 Weekly Supply Plan vFinal.csv
+Monthly,2021_06_21,Wk22,Wk25,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_06_21 Wk25 Weekly Supply Plan vFinal.csv
+Monthly,2021_06_28,Wk22,Wk26,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_06_28 Wk26 Weekly Supply Plan vFinal.csv
+Monthly,2021_07_05,Wk22,Wk27,../../wsps_final2\2021_05_31 Wk22 Weekly Supply Plan vFinal.csv,../../wsps_final2\2021_07_05 Wk27 Weekly Supply Plan vFinal.csv
