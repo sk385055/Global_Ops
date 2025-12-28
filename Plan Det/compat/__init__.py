@@ -1,54 +1,169 @@
-# Copyright (c) 2010-2023 openpyxl
+"""
+compat
+======
 
-from .numbers import NUMERIC_TYPES
-from .strings import safe_string
+Cross-compatible functions for different versions of Python.
 
-import warnings
-from functools import wraps
-import inspect
+Other items:
+* platform checker
+"""
+from __future__ import annotations
+
+import os
+import platform
+import sys
+
+from pandas._typing import F
+from pandas.compat._constants import (
+    IS64,
+    PY39,
+    PY310,
+    PY311,
+    PYPY,
+)
+import pandas.compat.compressors
+from pandas.compat.numpy import (
+    is_numpy_dev,
+    np_version_under1p21,
+)
+from pandas.compat.pyarrow import (
+    pa_version_under7p0,
+    pa_version_under8p0,
+    pa_version_under9p0,
+    pa_version_under11p0,
+)
 
 
-class DummyCode:
+def set_function_name(f: F, name: str, cls) -> F:
+    """
+    Bind the name/qualname attributes of the function.
+    """
+    f.__name__ = name
+    f.__qualname__ = f"{cls.__name__}.{name}"
+    f.__module__ = cls.__module__
+    return f
 
-    pass
+
+def is_platform_little_endian() -> bool:
+    """
+    Checking if the running platform is little endian.
+
+    Returns
+    -------
+    bool
+        True if the running platform is little endian.
+    """
+    return sys.byteorder == "little"
 
 
-# from https://github.com/tantale/deprecated/blob/master/deprecated/__init__.py
-# with an enhancement to update docstrings of deprecated functions
-string_types = (type(b''), type(u''))
-def deprecated(reason):
+def is_platform_windows() -> bool:
+    """
+    Checking if the running platform is windows.
 
-    if isinstance(reason, string_types):
+    Returns
+    -------
+    bool
+        True if the running platform is windows.
+    """
+    return sys.platform in ["win32", "cygwin"]
 
-        def decorator(func1):
 
-            if inspect.isclass(func1):
-                fmt1 = "Call to deprecated class {name} ({reason})."
-            else:
-                fmt1 = "Call to deprecated function {name} ({reason})."
+def is_platform_linux() -> bool:
+    """
+    Checking if the running platform is linux.
 
-            @wraps(func1)
-            def new_func1(*args, **kwargs):
-                #warnings.simplefilter('default', DeprecationWarning)
-                warnings.warn(
-                    fmt1.format(name=func1.__name__, reason=reason),
-                    category=DeprecationWarning,
-                    stacklevel=2
-                )
-                return func1(*args, **kwargs)
+    Returns
+    -------
+    bool
+        True if the running platform is linux.
+    """
+    return sys.platform == "linux"
 
-            # Enhance docstring with a deprecation note
-            deprecationNote = "\n\n.. note::\n    Deprecated: " + reason
-            if new_func1.__doc__:
-                new_func1.__doc__ += deprecationNote
-            else:
-                new_func1.__doc__ = deprecationNote
-            return new_func1
 
-        return decorator
+def is_platform_mac() -> bool:
+    """
+    Checking if the running platform is mac.
 
-    elif inspect.isclass(reason) or inspect.isfunction(reason):
-        raise TypeError("Reason for deprecation must be supplied")
+    Returns
+    -------
+    bool
+        True if the running platform is mac.
+    """
+    return sys.platform == "darwin"
 
-    else:
-        raise TypeError(repr(type(reason)))
+
+def is_platform_arm() -> bool:
+    """
+    Checking if the running platform use ARM architecture.
+
+    Returns
+    -------
+    bool
+        True if the running platform uses ARM architecture.
+    """
+    return platform.machine() in ("arm64", "aarch64") or platform.machine().startswith(
+        "armv"
+    )
+
+
+def is_platform_power() -> bool:
+    """
+    Checking if the running platform use Power architecture.
+
+    Returns
+    -------
+    bool
+        True if the running platform uses ARM architecture.
+    """
+    return platform.machine() in ("ppc64", "ppc64le")
+
+
+def is_ci_environment() -> bool:
+    """
+    Checking if running in a continuous integration environment by checking
+    the PANDAS_CI environment variable.
+
+    Returns
+    -------
+    bool
+        True if the running in a continuous integration environment.
+    """
+    return os.environ.get("PANDAS_CI", "0") == "1"
+
+
+def get_lzma_file() -> type[pandas.compat.compressors.LZMAFile]:
+    """
+    Importing the `LZMAFile` class from the `lzma` module.
+
+    Returns
+    -------
+    class
+        The `LZMAFile` class from the `lzma` module.
+
+    Raises
+    ------
+    RuntimeError
+        If the `lzma` module was not imported correctly, or didn't exist.
+    """
+    if not pandas.compat.compressors.has_lzma:
+        raise RuntimeError(
+            "lzma module not available. "
+            "A Python re-install with the proper dependencies, "
+            "might be required to solve this issue."
+        )
+    return pandas.compat.compressors.LZMAFile
+
+
+__all__ = [
+    "is_numpy_dev",
+    "np_version_under1p21",
+    "pa_version_under7p0",
+    "pa_version_under8p0",
+    "pa_version_under9p0",
+    "pa_version_under11p0",
+    "IS64",
+    "PY39",
+    "PY310",
+    "PY311",
+    "PYPY",
+]
