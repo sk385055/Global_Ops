@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atleos Global Ops Analytics, Pudu</title>
+    <style>
+
+        .ask-me-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .ask-me-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transform: translateY(0);
+            animation: slideDown 1s ease-in-out;
+        }
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        header span {
+            text-shadow: 2px 2px 4px #080b0b;
+        }
+        .split {
+            display: flex;
+            width: 100%;
+            margin-top: 60px;
+        }
+        .left {
+            width: 20%;
+            background: linear-gradient(135deg,#83d3bc, #2fa6c7);
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;  
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+        }
+        .right {
+            width: 80%;
+            padding: 20px;
+            position: relative;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            justify-content: center;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            left: calc(100% + 80px);
+            top: 0;
+            background: linear-gradient(135deg, #089a9a, #28afe4);
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 10px; 
+            overflow: hidden;
+            opacity: 0;
+            transform: translateX(0);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            white-space: nowrap;
+        }
+        .dropdown-content a {
+            color: rgb(249, 247, 247);
+            padding: 16px 20px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s, transform 0.3s;
+            font-size: 16px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+            transform: scale(1.05);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .dropbtn {
+            background-color:#0960b8;
+            color: rgb(255, 255, 255);
+            padding: 20px 24px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            width: 200px;
+        }
+        .dropbtn:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .container_link {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    
+        .container_link_4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+        .highlight {
+            padding: 2px 20px;
+            margin: 10px;
+            font-family: 'Arial', sans-serif;
+            font-size: 0.9em;
+            font-weight: bold;
+            color: white;
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px #000000;
+            transition: transform 0.2s;
+        }
+        .highlight:hover {
+            transform: scale(1.1);
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        .search-box {
+            width: 60%;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .suggestions {
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            background-color: white;
+            position: absolute;
+            width: calc(65% - 22px);
+            z-index: 1000;
+        }
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+
+    <script>
+        function showImage() {
+            document.getElementById('teamImage').style.display = 'block';
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <header><span> Atleos Global Ops Analytics, Pudu </span></header>
+    <div class="split">
+        <div class="left">
+            <div class="button-container">
+
+
+                <div class="dropdown">
+                    <button class="dropbtn">Team</button>
+                    <div class="dropdown-content">
+                        <div class="container">
+                        <img id="teamImage" src="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Website\Teams.jpg" alt="Team Image">
+                        
+                                    
+           
+                    </div>
+                    </div>
+                </div>
+
+
+
+                <div class="dropdown">
+                    <button class="dropbtn">Power-BI Reports</button>
+                    <div class="dropdown-content">
+                    <div class="container_link">
+                        <a href="https://app.powerbi.com/links/6mhcfyUgA_?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" target="_blank">Risk Assessment</a>
+                        <a href="https://app.powerbi.com/links/qfhtRDAfNe?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" target="_blank">Schedule Stability</a>
+                        <a href="https://app.powerbi.com/links/zKHMAUdnWg?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" target="_blank">GOP</a>
+                        <a href="https://app.powerbi.com/groups/me/reports/8b76a558-8cd1-44f5-9936-f4141bfc969e/ReportSection?experience=power-bi" target="_blank">ICOR to STD</a>
+                        <a href="https://app.powerbi.com/groups/me/reports/d641a2c4-89d1-47a9-8296-d42d43f41624/a99befb148b6d3211ea9?experience=power-bi" target="_blank">SR Modules</a>
+                        
+                        <a href="https://app.powerbi.com/links/PMBa1cCV5Q?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" target="_blank">OTD Metrics</a>
+                        <a href="https://app.powerbi.com/groups/me/reports/d794ff4f-4f95-4cb3-a210-5452650b3929/ReportSection52c339128cd1a685a8cc?ctid=6539da08-b835-422b-bc32-76ca20bec464&experience=power-bi" target="_blank">IA Excess</a>
+                        <a href="https://app.powerbi.com/links/8oTFQ-mAYJ?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" target="_blank">IO-Initial Scheduling Tracker </a>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Share Folders</button>
+                    <div class="dropdown-content">
+                    <div class="container_link_4">
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Demand Planning\POR and Changes" target="_blank">POR</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\DEP POR" target="_blank">DEP POR</a>
+                        <a href="https://ncratleos.sharepoint.com/sites/NCRAtleosOpsAnalytics/Shared Documents/Forms/AllItems.aspx?newTargetListUrl=%2fsites%2fNCRAtleosOpsAnalytics%2fShared+Documents&viewpath=%2fsites%2fNCRAtleosOpsAnalytics%2fShared+Documents%2fForms%2fAllItems.aspx&OR=Teams-HL&CT=1706680475965&id=%2fsites%2fNCRAtleosOpsAnalytics%2fShared+Documents%2fGlobal+Ops+Analytics%2fNCR+Atleos+Backlog+changes&viewid=0f41fdff-85a6-4188-93a6-c5c7b80bc454" target="_blank">Backlog Changes</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Schedule Stability" target="_blank">Schedule Stability</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\OTD & Leadtime" target="_blank">OTD & LeadTime</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Demand Planning\Sales Funnel" target="_blank">SFDC</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Daily Order Cover" target="_blank">Global Doc</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Plandet" target="_blank">PlantDet</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Revenue report" target="_blank">Rev Report</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\scheduling_intelligence_tool" target="_blank">Unschedule Order</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Weekly Supply Plan" target="_blank">Weekly Supply Plan</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Work Instructions" target="_blank">Work Instruction</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Profile Tracker" target="_blank">Profile Tracker</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Projects" target="_blank">Projects</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Ennoconn Safe Demand" target="_blank">EC-Safe Demand</a>
+                        <a href="file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Feature Forecast Files\Plant Feature Mix files" target="_blank">Plant Feature Mix</a>
+                    
+                    </div>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <button class="dropbtn">Links</button>
+                    
+                    <div class="dropdown-content">
+                    <div class="container">
+                        <a href="https://ncratleos-my.sharepoint.com/:o:/p/vv185114/EhFkhRAg0fpKscvRfT7VTMgBGR4bL26uESdVvW5Y8zGuwA" target="_blank">Azure Queries</a>
+                        <a href="https://web.azuresynapse.net/en/authoring/explore/workspace/sqlscripts/SQL%20script%209?workspace=%2Fsubscriptions%2F54227ec4-067e-43a5-ad45-dad40224c0b9%2FresourceGroups%2Frg-syn-adl-eus-prd%2Fproviders%2FMicrosoft.Synapse%2Fworkspaces%2Fsyn-adl01-prd" target="_blank">Azure Synapse Analytics</a>
+                        <a href="https://atmpcz.ncratleos.com/OA_HTML/RF.jsp?function_id=29291&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=v9th8Qnuc-fzJVFu.7eYkQ&oas=H0WA3sQm1ERNUbs5S0C1Yg.." target="_blank">NFC Configurator</a>
+                        <a href="https://tableau.ncratleos.com/#/site/NCRAnalytics/home" target="_blank">Tableau</a>
+                        <a href="https://plm.ncrvoyix.com/ematrix/ncrLogin.jsp" target="_blank">Merlin</a>
+                        <a href="https://atmerpprod.daytonoh.ncr.com:4499/OA_HTML/RF.jsp?function_id=30923&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=82kHgwXjYzrMspRRFkHZ2g..&params=T1u.pb0I9Lh3-O.ZxmqkQpWRAahwgBVrc3O95NrpEsbMCtilP5I4GhYfwyfajzOcrazwi6L3rV6ZU1L.hkZP0fg4W5W7cwmkBkorBVGi4Wk6UtGTOkMYMNdlg2gyl8ym7CvCI50UdjFM1D5HHrYKUiXubA.OVxxHr54ICGcP126hd3erBdUIa2dAU9c11DVNkDuOuARVnYWbqteu0WQ12hm3M3TKuTy4y0S3dyoIORPq.p.c4mfWmOXBqYyadV7Ygwiyq.uKtf1-o94ihKM98.KnGHwth3lv0fV96OkSu4k7Rn86OFw2sHNzSFsbi9DmCSkAI8ikIFlqSlVuA4HILcPaa5roXR8ZZHLdfIOvI7JluxqQQ8KcdXrH5i9VpXKNOHINgGr2c3LRUlKy4nduMYmaUAbcdiA6TTmke0Q5BJk9BpvP82WKZfzegw8uTV7Ak94wZogAa7MC41t-DW2KbE422NSeJz9p1leedAtKF64" target="_blank">ERP</a>
+                        <a href="https://fa-exur-saasfaprod1.fa.ocs.oraclecloud.com/fscmUI/faces/FuseWelcome?_afrLoop=8664184471372303&_afrWindowMode=0&_afrWindowId=169tqbu06p&_adf.ctrl-state=vh2q6e1ke_1&_afrFS=16&_afrMT=screen&_afrMFW=1318&_afrMFH=654&_afrMFDW=1366&_afrMFDH=768&_afrMFC=8&_afrMFCI=0&_afrMFM=0&_afrMFR=96&_afrMFG=0&_afrMFS=0&_afrMFO=0" target="_blank">OCP</a>
+                        <a href="https://iis.ncrnet.ncratleos.com/spp/form/user_status.asp" target="_blank">ERP Request</a>
+                        <a href="https://aim.ncratleos.com/ignite/login" target="_blank">Merlin Request</a>
+                        <a href="https://launcher.myapps.microsoft.com/api/signin/0dc472c8-1651-4c53-b9a2-9b1898db3750?tenantId=6539da08-b835-422b-bc32-76ca20bec464" target="_blank">ADP</a>
+                        <a href="https://ncratleos.service-now.com/itcentral?id=index" target="_blank">IT Central</a>
+                        <a href="https://www.linkedin.com/learning/search?keywords=&upsellOrderOrigin=default_guest_learning&trk=learning-topics_learning-search-bar_search-submit" target="_blank">NCR University</a>
+                        
+                     
+                       
+                    </div> 
+                    </div>
+                </div>
+                
+
+
+
+                
+                <div class="dropdown">
+                    <button class="dropbtn">Projects</button>
+                    
+                    <div class="dropdown-content">
+                    <div class="container">
+                        <a href="https://app.powerbi.com/links/cCyaeVIiEL?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare&bookmarkGuid=74a78d31-d5a1-4f7e-9f38-0f2fe9bfc394" target="_blank">AI-ML Project Site</a>
+                        <a href="https://www.canva.com/design/DAGZFBOx6qg/Lnkchbu6s-r_Tx_jLfFp3A/view?utm_content=DAGZFBOx6qg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h2ce7f1cf48" target="_blank">AI-ML Project Journey</a>
+                        <a href="https://www.canva.com/design/DAGZD7fOtMg/jdFNktf2IJx4vD0-QtVmXw/view?utm_content=DAGZD7fOtMg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h77d758705b" target="_blank">AI-ML Project Tracker</a>
+                    
+                    </div> 
+                    </div>
+                </div>
+  
+
+
+            </div>
+        </div>
+        <div class="right">
+            <div class="right">
+                <div class="search-container">
+                    <input type="text" class="search-box" id="search-box" placeholder="Search...">
+                    <div class="suggestions" id="suggestions"></div>
+                </div>
+                <!-- Content for the right side can go here -->
+            </div>
+    </div>
+        <button class="ask-me-button" onclick="navigateToLink()">Ask Me</button>
+    <script>
+        document.addEventListener('click', function(event) {
+            var dropdowns = document.querySelectorAll('.dropdown-content');
+            var isClickInside = false;
+
+            dropdowns.forEach(function(dropdown) {
+                if (dropdown.parentElement.contains(event.target)) {
+                    isClickInside = true;
+                    dropdown.style.display = 'block';
+                    dropdown.style.opacity = '1';
+                    dropdown.style.transform = 'translateX(0)';
+                } else {
+                    dropdown.style.display = 'none';
+                    dropdown.style.opacity = '0';
+                    dropdown.style.transform = 'translateX(-10px)';
+                }
+            });
+
+            if (!isClickInside) {
+                dropdowns.forEach(function(dropdown) {
+                    dropdown.style.display = 'none';
+                    dropdown.style.opacity = '0';
+                    dropdown.style.transform = 'translateX(-10px)';
+                });
+            }
+        });
+
+        const searchBox = document.getElementById('search-box');
+        const suggestions = document.getElementById('suggestions');
+        const dropdownLinks = {
+            'Risk Assessment - (Report)': 'https://app.powerbi.com/links/6mhcfyUgA_?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare',
+            'POR - (Files)': 'file:\\\\wtc1501cifs.prod.local\\ORGSHARE\\TEAMS\\ERP Shared Folder\\NCR Atleos\\Atleos Demand Planning\\POR and Changes',
+            'DEP POR - (Files)': 'file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\DEP POR',
+            'Schedule Stability - (Files)': 'file:\\\\wtc1501cifs.prod.local\\ORGSHARE\\TEAMS\\ERP Shared Folder\\NCR Atleos\\Atleos Operations Planning\\Global Ops Analytics\\Metrics\\Schedule Stability',
+            'Schedule Stability - (Report)' : "https://app.powerbi.com/links/qfhtRDAfNe?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare" ,
+            'Azure Queries - (Link)': 'https://ncratleos-my.sharepoint.com/:o:/p/vv185114/EhFkhRAg0fpKscvRfT7VTMgBGR4bL26uESdVvW5Y8zGuwA',
+            'Azure Synapse Analytics - (Link)': 'https://web.azuresynapse.net/en/authoring/explore/workspace/sqlscripts/SQL%20script%209?workspace=%2Fsubscriptions%2F54227ec4-067e-43a5-ad45-dad40224c0b9%2FresourceGroups%2Frg-syn-adl-eus-prd%2Fproviders%2FMicrosoft.Synapse%2Fworkspaces%2Fsyn-adl01-prd',
+            'Backlog Changes - (Report)': 'https://app.powerbi.com/links/zKHMAUdnWg?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare' ,
+            'Namer Report - (Report)'  :"https://app.powerbi.com/groups/me/reports/8b76a558-8cd1-44f5-9936-f4141bfc969e/ReportSection?experience=power-bi" ,
+            'SR Modules - (Report)':   "https://app.powerbi.com/groups/me/reports/d641a2c4-89d1-47a9-8296-d42d43f41624/a99befb148b6d3211ea9?experience=power-bi",
+            'OTD Metrics - (Report)' :        "https://app.powerbi.com/links/PMBa1cCV5Q?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare",
+            'OTD & LeadTime - (Files)':  "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\OTD & Leadtime",
+            'SFDC - (Files)' :    "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Demand Planning\Sales Funnel",
+            'Global Doc - (Files)':  "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Daily Order Cover",
+            'PlantDet - (Files)':   "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Plandet",
+            'Rev Report - (Files)':  "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\Revenue report",
+            'Unschedule Order - (Files)': "file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Metrics\scheduling_intelligence_tool",
+            'Weekly Supply Plan - (Files)':"file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Weekly Supply Plan",
+            'Work Instruction - (Files)':"file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Work Instructions",
+            'Profile Tracker - (Files)':"file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Profile Tracker",
+            'Projects - (Files)':"file:\\wtc1501cifs.prod.local\ORGSHARE\TEAMS\ERP Shared Folder\NCR Atleos\Atleos Operations Planning\Global Ops Analytics\Projects",
+
+            'NFC Configurator - (Link)':"http://sunatm4584.daytonoh.ncr.com:8004/OA_HTML/RF.jsp?function_id=29291&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&params=v9th8Qnuc-fzJVFu.7eYkQ&oas=CwgjFdn1z9KvqAksCiUDDA..",
+            'GOP | TLS - (Report)' : "https://app.powerbi.com/links/zKHMAUdnWg?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare",
+            'Tableau - (Link)':"https://tableau.ncratleos.com/#/site/NCRAnalytics/home" ,
+            'Merlin - (Link)':"https://plm.ncrvoyix.com/ematrix/ncrLogin.jsp" ,
+            'ERP - (Link)': "https://atmerpprod.daytonoh.ncr.com:4499/OA_HTML/RF.jsp?function_id=30923&resp_id=-1&resp_appl_id=-1&security_group_id=0&lang_code=US&oas=82kHgwXjYzrMspRRFkHZ2g..&params=T1u.pb0I9Lh3-O.ZxmqkQpWRAahwgBVrc3O95NrpEsbMCtilP5I4GhYfwyfajzOcrazwi6L3rV6ZU1L.hkZP0fg4W5W7cwmkBkorBVGi4Wk6UtGTOkMYMNdlg2gyl8ym7CvCI50UdjFM1D5HHrYKUiXubA.OVxxHr54ICGcP126hd3erBdUIa2dAU9c11DVNkDuOuARVnYWbqteu0WQ12hm3M3TKuTy4y0S3dyoIORPq.p.c4mfWmOXBqYyadV7Ygwiyq.uKtf1-o94ihKM98.KnGHwth3lv0fV96OkSu4k7Rn86OFw2sHNzSFsbi9DmCSkAI8ikIFlqSlVuA4HILcPaa5roXR8ZZHLdfIOvI7JluxqQQ8KcdXrH5i9VpXKNOHINgGr2c3LRUlKy4nduMYmaUAbcdiA6TTmke0Q5BJk9BpvP82WKZfzegw8uTV7Ak94wZogAa7MC41t-DW2KbE422NSeJz9p1leedAtKF64",
+            'ERP Request - (Link)': "https://iis.ncrnet.ncratleos.com/spp/form/user_status.asp",
+            'Merlin Request - (Link)' : "https://aim.ncratleos.com/ignite/login",
+            'ADP - (Link)': "https://launcher.myapps.microsoft.com/api/signin/0dc472c8-1651-4c53-b9a2-9b1898db3750?tenantId=6539da08-b835-422b-bc32-76ca20bec464",
+            'IT Central - (Link)': "https://ncratleos.service-now.com/itcentral?id=index",
+            'Vasanthan V': "https://app.powerbi.com/links/BxVhYtOnJ5?ctid=6539da08-b835-422b-bc32-76ca20bec464&pbi_source=linkShare",
+
+
+            'NCR University - (Link)' :"https://www.linkedin.com/learning/search?keywords=&upsellOrderOrigin=default_guest_learning&trk=learning-topics_learning-search-bar_search-submit"
+                       
+
+
+        };
+
+        searchBox.addEventListener('input', function() {
+            const query = searchBox.value.toLowerCase();
+            suggestions.innerHTML = '';
+            if (query) {
+                Object.keys(dropdownLinks).forEach(function(key) {
+                    if (key.toLowerCase().includes(query)) {
+                        const suggestionItem = document.createElement('div');
+                        suggestionItem.className = 'suggestion-item';
+                        suggestionItem.textContent = key;
+                        suggestionItem.addEventListener('click', function() {
+                            window.open(dropdownLinks[key], '_blank');
+                        });
+                        suggestions.appendChild(suggestionItem);
+                    }
+                });
+            }
+        });
+
+        function navigateToLink() {
+            window.location.href = 'https://forms.office.com/r/UmQdU705ji';
+        }
+    </script>
+</body>
+</html>
